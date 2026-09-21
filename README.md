@@ -138,6 +138,10 @@ healthy, and prints the setup address and one-time administrator code.
 
 ### 5. Create the administrator
 
+![RetroStream installer output showing the setup address and one-time administrator code](docs/screenshots/docker-first-run-output.png)
+
+_Example installer output; your server address and one-time setup code will differ._
+
 Open the printed address in a modern browser, normally:
 
 ```text
