@@ -16,8 +16,30 @@ Python, FFmpeg, yt-dlp, Deno, and SQLite; you do not install them separately.
 
 ## Screenshots
 
-Screenshots will be added here. The interface is intentionally styled after the
-Windows XP Luna era and remains usable in older browsers.
+The interface is intentionally styled after the Windows XP Luna era and remains
+usable in older browsers.
+
+### First-run administrator setup
+
+![RetroStream first-run administrator setup page](docs/screenshots/first-run-setup.png)
+
+### Classic browser compatibility
+
+| Internet Explorer 5 library view | Internet Explorer 8 dashboard |
+| --- | --- |
+| ![RetroStream media library displayed in Internet Explorer 5](docs/screenshots/internet-explorer-5-library.png) | ![RetroStream dashboard displayed in Internet Explorer 8 on Windows XP](docs/screenshots/internet-explorer-8-dashboard.jpg) |
+
+### Playlist controls and playback
+
+| Playlist controls in Internet Explorer | Video playing in Windows Media Player 7 |
+| --- | --- |
+| ![RetroStream playlist controls with ASX and WPL links](docs/screenshots/playlist-controls.png) | ![RetroStream video playing in Windows Media Player 7](docs/screenshots/windows-media-player-7.png) |
+
+![RetroStream playlist streaming video in Windows Media Player 9 on Windows XP](docs/screenshots/windows-media-player-9.jpg)
+
+> These retro-client captures come from an existing installation explicitly
+> configured for the former port 8080. New Docker installations use 8780 for the
+> web interface and playlists and 8781 for media streaming.
 
 ## What you need
 
@@ -110,18 +132,77 @@ If the helper could not display the code, run:
 docker compose logs retrostream
 ```
 
-### 6. Add and play media
+## How to use RetroStream
 
-1. Sign in to RetroStream.
-2. Create a playlist or open **Add Media**.
-3. Paste a YouTube video or playlist URL.
-4. Wait for the import job to finish under **System Status**.
-5. Optionally prepare Audio or Video in advance.
-6. Open or download the playlist's ASX link.
-7. Open that ASX file in Windows Media Player on the retro PC.
+RetroStream lets modern YouTube and YouTube Music content play on older media
+players by converting it into legacy-friendly Windows Media formats.
 
-Use **Low (Legacy)** video for the oldest clients; it uses WMV1. Standard and High
-use WMV2. Audio uses WMA/WMAv2.
+### 1. Open RetroStream
+
+From a modern browser on your network, open the RetroStream web interface:
+
+```text
+http://YOUR-SERVER:8780
+```
+
+Log in with the administrator account you created during setup.
+
+### 2. Add media
+
+Open **Add Media** and paste a supported YouTube or YouTube Music link.
+
+RetroStream can import:
+
+- individual videos or songs
+- YouTube playlists
+- YouTube Music playlists
+- YouTube Music albums
+
+After submitting the link, RetroStream imports the tracks into your library.
+
+### 3. Create a playlist
+
+Open **Playlists** and create a playlist. You can then add imported tracks from
+your library, change their order, or import media directly into a playlist.
+
+Each playlist gets a permanent RetroStream URL, so you can reuse the same playlist
+from your retro computers later.
+
+### 4. Prepare media
+
+RetroStream converts modern media into formats older players understand. For audio,
+choose an Audio quality. For video, choose:
+
+- **Low (Legacy)** — WMV1, intended for very old Windows Media Player versions
+- **Standard** — WMV2
+- **High** — WMV2 at higher quality
+
+You can prepare tracks manually, prepare an entire playlist, or allow RetroStream
+to generate media when needed.
+
+### 5. Play on another computer
+
+Open the playlist's **ASX** link or download the ASX file and open it with a
+compatible media player.
+
+RetroStream has been tested successfully with:
+
+- Windows Media Player
+- VLC
+- Winamp
+
+The player connects back to RetroStream over your LAN and streams the converted
+audio or video. Playback controls remain inside the media player, including
+**Play, Pause, Seek, Next, Previous, Shuffle, and Repeat**.
+
+### 6. Keep RetroStream running
+
+The RetroStream server must remain running while your retro computers are streaming
+from it. Your library, playlists, administrator account, and prepared media are
+stored persistently, so normal Docker restarts and updates do not erase them.
+
+> RetroStream is intended for use on a trusted local network. Do not expose ports
+> 8780 or 8781 directly to the public Internet.
 
 ## Your data is persistent
 
