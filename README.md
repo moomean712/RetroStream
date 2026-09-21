@@ -184,8 +184,8 @@ to generate media when needed.
 
 ### 5. Play on another computer
 
-Open the playlist's **ASX** link or download the ASX file and open it with a
-compatible media player.
+Open the playlist's **ASX** or **WPL** link, or download either playlist file and
+open it with a compatible media player.
 
 RetroStream has been tested successfully with:
 
