@@ -14,6 +14,10 @@ Python, FFmpeg, yt-dlp, Deno, and SQLite; you do not install them separately.
 > RetroStream is designed for a trusted home LAN. Do not expose its ports to the
 > public Internet.
 
+## Demo video
+
+[Watch RetroStream in action on YouTube](https://www.youtube.com/watch?v=A2ji2uFi_Ks)
+
 ## Screenshots
 
 The interface is intentionally styled after the Windows XP Luna era and remains
