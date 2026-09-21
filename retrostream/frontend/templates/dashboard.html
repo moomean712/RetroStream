@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<div class="page-title"><img src="/static/icons/dashboard-24.png" width="24" height="24" alt=""><h1>Dashboard</h1></div>
+<div class="status-grid"><div><b>Library items</b><span>{{ status.library_items }}</span></div><div><b>Playlists</b><span>{{ status.playlists }}</span></div><div><b>Cache used</b><span>{{ status.total|bytesize }}</span></div><div><b>Server</b><span>{% if status.ffmpeg != 'Not found' %}Healthy{% else %}Needs attention{% endif %}</span></div></div>
+<div class="panel"><div class="panel-title">Quick tasks</div><div class="panel-body"><a class="xp-button" href="/add">Add media</a> <a class="xp-button" href="/playlists">Browse playlists</a></div></div>
+<div class="panel"><div class="panel-title">Current activity</div><div class="panel-body"><table class="details"><tr><th>Preparing media</th><td>{{ status.active_transcodes }}</td></tr><tr><th>Available disk space</th><td>{{ status.free_disk|bytesize }}</td></tr><tr><th>Recent failures</th><td>{{ status.failures|length }}{% if status.failures %} &mdash; <a href="/status">view details</a>{% endif %}</td></tr></table></div></div>
+{% endblock %}

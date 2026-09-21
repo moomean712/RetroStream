@@ -1,0 +1,6 @@
+{% extends 'auth_base.html' %}{% set title='Log On to RetroStream' %}{% from 'macros.html' import token %}{% block auth_content %}
+<div class="auth-icon"><img src="/static/icons/login-48.png" width="48" height="48" alt=""></div>
+<form action="/login" method="post">{{ token(csrf, return_to) }}<table class="form-table">
+<tr><th><label for="username">User name:</label></th><td><input id="username" name="username" maxlength="64" autocomplete="username" required></td></tr>
+<tr><th><label for="password">Password:</label></th><td><input id="password" name="password" type="password" autocomplete="current-password" required></td></tr></table>
+<div class="dialog-buttons"><button type="submit">Log On</button></div></form>{% endblock %}

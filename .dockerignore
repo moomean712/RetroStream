@@ -1,0 +1,27 @@
+.git
+.github
+.venv
+.tools
+.pytest_cache
+.ruff_cache
+__pycache__
+*.py[cod]
+*.sqlite3*
+*.log
+.env
+build
+dist
+retrostream.egg-info
+tests
+data
+backups
+Windows XP Icons
+docs
+scripts
+docker/*.ps1
+docker/install-docker.sh
+docker/update-docker.sh
+docker/backup-docker.sh
+*-docker.sh
+*-docker.ps1
+retrostream.toml

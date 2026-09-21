@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+data/
+retrostream.toml
+.tools/
+.env
+backups/
+Windows XP Icons/
+# Native-install-only material is kept locally but not published in this Docker repository.
+docs/deployment.md
+docs/troubleshooting.md
+retrostream.example.toml
+scripts/
+.git-prepublish-backup/

@@ -1,0 +1,32 @@
+name: retrostream
+
+services:
+  retrostream:
+    image: ${RETROSTREAM_IMAGE:-ghcr.io/moomean712/retrostream:latest}
+    container_name: retrostream
+    restart: unless-stopped
+    ports:
+      - "${RETROSTREAM_WEB_PORT:-8780}:${RETROSTREAM_WEB_PORT:-8780}"
+      - "${RETROSTREAM_STREAMING_PORT:-8781}:${RETROSTREAM_STREAMING_PORT:-8781}"
+    environment:
+      RETROSTREAM_BIND: 0.0.0.0
+      RETROSTREAM_HOSTNAME: ${RETROSTREAM_HOSTNAME:?Run the Docker installer to create .env}
+      RETROSTREAM_WEB_PORT: ${RETROSTREAM_WEB_PORT:-8780}
+      RETROSTREAM_STREAMING_PORT: ${RETROSTREAM_STREAMING_PORT:-8781}
+      RETROSTREAM_DATA_DIR: /data
+      RETROSTREAM_CACHE_DIR: /cache
+      RETROSTREAM_FFMPEG: /usr/bin/ffmpeg
+      RETROSTREAM_JS_RUNTIME: deno
+      RETROSTREAM_MAX_CACHE_BYTES: ${RETROSTREAM_MAX_CACHE_BYTES:-21474836480}
+      RETROSTREAM_RETENTION_DAYS: ${RETROSTREAM_RETENTION_DAYS:-30}
+      RETROSTREAM_DEFAULT_AUDIO: ${RETROSTREAM_DEFAULT_AUDIO:-audio-standard}
+      RETROSTREAM_DEFAULT_VIDEO: ${RETROSTREAM_DEFAULT_VIDEO:-video-standard}
+      RETROSTREAM_MAX_TRANSCODES: ${RETROSTREAM_MAX_TRANSCODES:-2}
+      RETROSTREAM_MAX_STREAMS: ${RETROSTREAM_MAX_STREAMS:-16}
+    volumes:
+      - retrostream-data:/data
+      - retrostream-cache:/cache
+
+volumes:
+  retrostream-data:
+  retrostream-cache:

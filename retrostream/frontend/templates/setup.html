@@ -1,0 +1,9 @@
+{% extends 'auth_base.html' %}{% set title='Set Up RetroStream' %}{% from 'macros.html' import token %}{% block auth_content %}
+<div class="auth-icon"><img src="/static/icons/setup-48.png" width="48" height="48" alt=""></div>
+<p>Enter the one-time setup code printed by RetroStream, then create the administrator account.</p>
+<form action="/setup" method="post">{{ token(csrf, return_to) }}<table class="form-table">
+<tr><th><label for="code">Setup code:</label></th><td><input id="code" name="code" maxlength="32" required></td></tr>
+<tr><th><label for="username">User name:</label></th><td><input id="username" name="username" maxlength="64" required></td></tr>
+<tr><th><label for="password">Password:</label></th><td><input id="password" name="password" type="password" required><small>At least 10 characters</small></td></tr>
+<tr><th><label for="confirm_password">Confirm password:</label></th><td><input id="confirm_password" name="confirm_password" type="password" required></td></tr></table>
+<div class="dialog-buttons"><button type="submit">Create Administrator</button></div></form>{% endblock %}

@@ -1,0 +1,4 @@
+BEGIN IMMEDIATE;
+ALTER TABLE cache_entries ADD COLUMN profile_version INTEGER NOT NULL DEFAULT 1;
+PRAGMA user_version=4;
+COMMIT;

@@ -1,0 +1,11 @@
+include CONTRIBUTING.md
+include Dockerfile
+include compose.yaml
+include .dockerignore
+include .env.example
+include *-docker.sh
+include *-docker.ps1
+recursive-include docker *.sh *.ps1
+recursive-include docs *.md
+recursive-include requirements *.txt
+recursive-include tests *.py

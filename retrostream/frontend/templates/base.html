@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>RetroStream - {{ page|title }}</title>
+<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/header-alignment.css"><script type="text/javascript" src="/static/retrostream.js"></script></head>
+<body><div class="site-shell"><div class="masthead"><img class="brand-icon" src="/static/icons/wmp-56.png" width="56" height="56" alt=""><span class="brand-line"><a class="brand" href="/"><span class="brand-name">RetroStream</span></a><span class="tagline">Modern media for classic Windows</span></span><span class="system-label">Local streaming for retro PCs</span></div>
+<div class="layout"><div class="sidebar">
+<div class="side-module"><div class="side-title">Tasks</div><div class="side-body">
+<div class="nav-row"><img src="/static/icons/add-24.png" width="18" height="18" alt=""><a href="/add"{% if page == 'add' %} class="selected"{% endif %}>Add media</a></div>
+<div class="nav-row"><img src="/static/icons/playlists-24.png" width="18" height="18" alt=""><a href="/playlists"{% if page in ['playlists','playlist'] %} class="selected"{% endif %}>Playlists</a></div>
+</div></div>
+<div class="side-module"><div class="side-title">RetroStream</div><div class="side-body">
+{% for label, url, key, icon in [('Dashboard','/','dashboard','dashboard'),('Library','/library','library','library'),('Storage','/storage','storage','storage'),('Settings','/settings','settings','settings'),('System Status','/status','status','status')] %}
+<div class="nav-row"><img src="/static/icons/{{ icon }}-24.png" width="18" height="18" alt=""><a href="{{ url }}"{% if page == key or (page == 'media' and key == 'library') %} class="selected"{% endif %}>{{ label }}</a></div>{% endfor %}
+</div></div>
+<div class="side-module account"><div class="side-title">Administrator</div><div class="side-body"><p>Signed in as<br><strong>{{ user }}</strong></p>
+<p class="account-action"><a href="/account/password">Change password</a></p><form class="account-action" action="/logout" method="post">{% from 'macros.html' import token %}{{ token(csrf, '/login') }}<img src="/static/icons/logout-24.png" width="16" height="16" alt=""><button class="link-button">Log off</button></form></div></div>
+</div><div class="main">{% if notice %}<div class="message success"><img src="/static/icons/success-24.png" width="24" height="24" alt="">{{ notice }}</div>{% endif %}
+{% if error %}<div class="message error-box"><img src="/static/icons/error-24.png" width="24" height="24" alt="">{{ error }}</div>{% endif %}
+{% block content %}{% endblock %}</div><div class="clear"></div></div>
+<div class="footer">RetroStream 0.1 &middot; Developed by <a href="https://moomean.com">Moomean</a></div></div></body></html>

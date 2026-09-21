@@ -1,0 +1,5 @@
+services:
+  retrostream:
+    image: retrostream:local
+    build:
+      context: .

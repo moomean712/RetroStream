@@ -1,0 +1,4 @@
+.brand-line{position:absolute;left:93px;top:17px;white-space:nowrap}
+.brand-line .brand{position:static;display:inline;height:auto}
+.brand-line .brand-name{float:none;display:inline;margin:0}
+.brand-line .tagline{position:static;display:inline;float:none;width:auto;margin:0 0 0 22px;vertical-align:baseline}
