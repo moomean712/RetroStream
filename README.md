@@ -54,7 +54,8 @@ media quality, playlist size, and the number of simultaneous users.
 - 5 GB of free disk space for Docker, RetroStream data, and a small media cache.
 - Docker Desktop on Windows/macOS, or Docker Engine with the Docker Compose plugin
   on Linux.
-- A modern browser for administration and a compatible media player on the retro PC.
+- A browser for administration and a compatible media player on the retro PC.
+  RetroStream remains usable in older browsers.
 - A local network connection between the retro PC and Docker host, with TCP ports
   **8780** and **8781** allowed through the host firewall.
 
@@ -65,6 +66,7 @@ media quality, playlist size, and the number of simultaneous users.
 - 25 GB or more of free disk space, which comfortably accommodates the default
   20 GiB prepared-media cache.
 - A wired Ethernet connection and an always-on Docker host.
+- A modern browser for the best administration experience.
 - A reserved LAN IP address or stable local DNS name for the RetroStream host, so
   saved playlist links keep working.
 
