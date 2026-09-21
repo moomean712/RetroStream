@@ -158,6 +158,8 @@ RetroStream can import:
 - YouTube Music playlists
 - YouTube Music albums
 
+Playlists must be **public or unlisted**. Private playlists cannot be imported.
+
 After submitting the link, RetroStream imports the tracks into your library.
 
 ### 3. Create a playlist
