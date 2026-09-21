@@ -206,6 +206,41 @@ stored persistently, so normal Docker restarts and updates do not erase them.
 > RetroStream is intended for use on a trusted local network. Do not expose ports
 > 8780 or 8781 directly to the public Internet.
 
+## MSN / Windows Live Messenger “Now Playing”
+
+One of RetroStream's fun retro-era features is that it can work with the old
+**MSN Messenger / Windows Live Messenger “Show What I'm Listening To”** feature.
+
+When you play RetroStream audio in a compatible version of **Windows Media
+Player**, RetroStream embeds normal Windows Media metadata such as the track title
+and artist into the WMA/WMV stream. Windows Media Player can then expose that
+metadata to Messenger through its normal “Now Playing” integration.
+
+If your Messenger version and Windows Media Player setup support it, your personal
+status can automatically show something like:
+
+```text
+Artist - Song Title
+```
+
+while the track is playing.
+
+![Windows Live Messenger showing RetroStream track metadata in the Now Playing status](docs/screenshots/windows-live-messenger-now-playing.png)
+
+RetroStream does not modify or communicate with Messenger directly. It simply
+provides properly tagged Windows Media streams and lets the original Windows Media
+Player/Messenger integration do the rest.
+
+For the best chance of compatibility:
+
+- Use Windows Media Player on the retro PC.
+- Enable **Show What I'm Listening To** in MSN/Windows Live Messenger.
+- Make sure Messenger's Windows Media Player integration or plugin is enabled.
+- Play a RetroStream audio playlist normally through Windows Media Player.
+
+This is especially useful if you're running a restored MSN/Windows Live Messenger
+setup and want the full mid-2000s experience.
+
 ## Your data is persistent
 
 RetroStream stores important state separately from the replaceable app:
