@@ -43,11 +43,30 @@ usable in older browsers.
 
 ## What you need
 
-- A computer or NAS that stays on while retro PCs use RetroStream.
+These are practical starting points. Transcoding speed and storage use depend on
+media quality, playlist size, and the number of simultaneous users.
+
+### Minimum requirements
+
+- A 64-bit x86-64 (`amd64`) computer or NAS that can run Docker. The published
+  container does not currently support ARM systems.
+- 2 CPU cores and 2 GB of available RAM.
+- 5 GB of free disk space for Docker, RetroStream data, and a small media cache.
 - Docker Desktop on Windows/macOS, or Docker Engine with the Docker Compose plugin
   on Linux.
-- A retro PC that can reach the Docker computer over the same LAN.
-- TCP ports **8780** and **8781** allowed through the Docker computer's firewall.
+- A modern browser for administration and a compatible media player on the retro PC.
+- A local network connection between the retro PC and Docker host, with TCP ports
+  **8780** and **8781** allowed through the host firewall.
+
+### Recommended for the best experience
+
+- 4 or more CPU cores and at least 4 GB of available RAM; 8 GB is preferable when
+  preparing multiple files or serving several clients at once.
+- 25 GB or more of free disk space, which comfortably accommodates the default
+  20 GiB prepared-media cache.
+- A wired Ethernet connection and an always-on Docker host.
+- A reserved LAN IP address or stable local DNS name for the RetroStream host, so
+  saved playlist links keep working.
 
 No Internet port forwarding is required or recommended.
 
@@ -225,7 +244,9 @@ Artist - Song Title
 
 while the track is playing.
 
-![Windows Live Messenger showing RetroStream track metadata in the Now Playing status](docs/screenshots/windows-live-messenger-now-playing.png)
+<img src="docs/screenshots/windows-live-messenger-now-playing.png"
+     alt="Windows Live Messenger showing RetroStream track metadata in the Now Playing status"
+     width="460">
 
 RetroStream does not modify or communicate with Messenger directly. It simply
 provides properly tagged Windows Media streams and lets the original Windows Media
