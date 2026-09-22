@@ -442,6 +442,16 @@ ghcr.io/moomean712/retrostream:latest
 - No nginx, database server, Redis, queue service, or supervisor in the image.
 - One non-root RetroStream process; persistent writes are limited to `/data` and `/cache`.
 
+## Disclosure
+
+RetroStream was **conceived, planned, designed, prompted, tested, debugged, deployed,
+and validated by a human**.
+
+AI tools were used to write the code based on those human-created requirements,
+architecture decisions, prompts, and testing feedback. The resulting code was then
+reviewed, tested on real systems, debugged, refined, and maintained by the human
+developer.
+
 ## License
 
 RetroStream source is provided under the [MIT License](LICENSE). FFmpeg, yt-dlp,
