@@ -452,6 +452,30 @@ architecture decisions, prompts, and testing feedback. The resulting code was th
 reviewed, tested on real systems, debugged, refined, and maintained by the human
 developer.
 
+## Disclaimer
+
+RetroStream is an open-source compatibility and educational project developed
+primarily for personal use, experimentation, and the preservation of legacy media
+playback workflows on vintage computer systems.
+
+- **No Content Affiliation:** RetroStream does not host, provide, bundle, or
+  distribute copyrighted media content. Media is retrieved and processed only at
+  the direction of the user. RetroStream is not affiliated with, endorsed by, or
+  sponsored by YouTube, Google, Microsoft, or any other third-party platform or
+  rights holder.
+- **Third-Party Services:** RetroStream interacts with third-party services and
+  publicly accessible media endpoints, including YouTube and YouTube Music. Use of
+  this software may be subject to, or potentially conflict with, the terms and
+  policies of those services. The developer is not responsible for rate limiting,
+  access restrictions, account actions, IP blocking, or other consequences
+  resulting from use of the software.
+- **Copyright and User Responsibility:** Users are solely responsible for ensuring
+  that their use of RetroStream complies with applicable copyright laws, licensing
+  terms, and the intellectual property rights of content owners.
+- **No Circumvention:** RetroStream is not intended to bypass DRM, access controls,
+  paywalls, authentication requirements, or other technological protection
+  measures.
+
 ## License
 
 RetroStream source is provided under the [MIT License](LICENSE). FFmpeg, yt-dlp,
